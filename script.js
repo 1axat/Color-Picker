@@ -25,3 +25,36 @@ const showColor = () => {
         li.addEventListener("click", e => copyColor(e.currentTarget.lastElementChild));
     });
 }
+showColor();
+
+const activateEyeDropper = () => {
+    document.body.style.display = "none";
+    setTimeout(async () => {
+        try {
+            
+            const eyeDropper = new EyeDropper();
+            const { sRGBHex } = await eyeDropper.open();
+            navigator.clipboard.writeText(sRGBHex);
+
+            
+            if(!pickedColors.includes(sRGBHex)) {
+                pickedColors.push(sRGBHex);
+                localStorage.setItem("picked-colors", JSON.stringify(pickedColors));
+                showColor();
+            }
+        } catch (error) {
+            alert("Failed to copy the color code!");
+        }
+        document.body.style.display = "block";
+    }, 10);
+}
+
+
+const clearAllColors = () => {
+    pickedColors.length = 0;
+    localStorage.setItem("picked-colors", JSON.stringify(pickedColors));
+    document.querySelector(".picked-colors").classList.add("hide");
+}
+
+clearAll.addEventListener("click", clearAllColors);
+colorPickerBtn.addEventListener("click", activateEyeDropper);
