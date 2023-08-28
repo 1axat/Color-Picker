@@ -15,6 +15,9 @@ HOW TO USE:
 3.Open your browser.
 
 4.Go to extensions.
+
 5.Enable developer mode.
+
 6.Click on load unpacked.
+
 7.Select the extracted folder and click ok to install it in your browser.
