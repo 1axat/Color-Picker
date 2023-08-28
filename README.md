@@ -9,8 +9,11 @@ Color History: Keep track of recently captured colors with the color history fea
 HOW TO USE:
 
 1.Download the .zip file.
+
 2.Extract the file.
+
 3.Open your browser.
+
 4.Go to extensions.
 5.Enable developer mode.
 6.Click on load unpacked.
